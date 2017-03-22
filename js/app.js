@@ -1,12 +1,15 @@
 angular.module('cardapioADSApp',['ngRoute'])
 
-.config(function($routeProvaider){
+.config(function($routeProvider){
 
-    $routeProvaider.when('/',{
+    $routeProvider.when('/',{
         templateUrl: 'view/login.html',
-        controler:'loginCtrl'
+        controller:'loginCtrl'
+    }).when('/home', {
+        templateUrl:'view/home.html',
+        controller:'homeCtrl'
     });
     // redireciona o usuario para a tela / quando ele digitar uma url inválida após a /
-    $routeProvaider.otherwise({redirectTo:'/'})
+    $routeProvider.otherwise({redirectTo:'/'});
 
 });
